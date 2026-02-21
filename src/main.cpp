@@ -2,7 +2,7 @@
 
 /**
  * @file main.cpp
- * @brief RGB LED Control System
+ * @brief Embedded RGB LED Control (Digital + PWM)
  * @author ansh-codr
  * @date 2026-02-21
  */
@@ -29,4 +29,22 @@ void loop() {
 
     digitalWrite(RED_pin, LOW);
     delay(1000);
+
+    // -------- ANALOG (PWM) MODE --------
+    analogWrite(RED_pin, 255);
+    analogWrite(GREEN_pin, 0);
+    analogWrite(BLUE_pin, 0);
+    delay(1000);
+
+    analogWrite(RED_pin, 0);
+    analogWrite(GREEN_pin, 255);
+    analogWrite(BLUE_pin, 0);
+    delay(1000);
+
+    analogWrite(RED_pin, 0);
+    analogWrite(GREEN_pin, 0);
+    analogWrite(BLUE_pin, 255);
+    delay(1000);
+
+    delay(500);
 }
